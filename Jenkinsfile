@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools { 
-        maven 'Maven_3_5_2'  
+        maven 'MAVEN_3_5_2'  
     }
    stages{
     stage('CompileandRunSonarAnalysis') {
@@ -22,7 +22,7 @@ pipeline {
             steps { 
                withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
                  script{
-                 app =  docker.build("asg")
+                 app =  docker.build("salimnextdev")
                  }
                }
             }
